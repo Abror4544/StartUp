@@ -1,4 +1,5 @@
 $(function () {
+    let title = document.querySelector('.header_text h1');
     $(window).resize(function () {
         if ($(window).width() < 992) {
             $('header .menu_btn_bars').show();
@@ -15,12 +16,14 @@ $(function () {
         $('header .menu_btn_close').show();
         $('header .menu_ul').show(300);
         $('header .menu_ul').css('transform', 'translateX(0%)');
+        title.style.zIndex = '-1'
     })
     $('.menu_btn_close').click(function () {
         $('header .menu_btn_close').hide();
         $('header .menu_btn_bars').show();
         $('header .menu_ul').fadeOut();
         $('header .menu_ul').css('transform', 'translateX(100%)');
+        title.style.zIndex = '1'
     })
 
 
